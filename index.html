@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Парольная страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            color: #ff0000;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Введите пароль</h1>
+        <p>Для доступа на сайт введи пароль, который был скрыт в письме.</p>
+        <input type="password" id="password" placeholder="Введите пароль">
+        <br>
+        <button onclick="checkPassword()">Войти</button>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var correctPassword = "radiation"; // Здесь введи свой пароль
+            var errorMessage = document.getElementById("error-message");
+
+            if (password === correctPassword) {
+                window.location.href = "https://drive.google.com/file/d/18L4gDmMD9qMa5ni0GyWieZTKCFDib5mc/view?usp=drive_link"; // Укажи ссылку на сайт, который хочешь
+            } else {
+                errorMessage.textContent = "Неправильный пароль. Попробуй снова.";
+            }
+        }
+    </script>
+</body>
+</html>
